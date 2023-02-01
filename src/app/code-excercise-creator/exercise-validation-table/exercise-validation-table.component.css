@@ -1,0 +1,13 @@
+.cell-content
+{
+  justify-content:  center;
+  text-align: center
+}
+.cell-header
+{
+  text-align: center;
+}
+mat-table
+{
+  overflow-x: scroll;
+}

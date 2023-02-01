@@ -1,0 +1,34 @@
+<mat-card>
+  <mat-card-title>Specify tests</mat-card-title>
+  <mat-card-content>
+    <form style="width: 50%" [formGroup]="exerciseTestForm">
+    <div class="validator-creator">
+      <mat-form-field  style="width: 51%" appearance="fill">
+        <mat-select formControlName="type">
+          <mat-option *ngFor="let testType of testTypeToSelect" [value]="testType.type">
+            {{testType.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field style="width: 51%" appearance="outline" class="input-field">
+        <mat-label>Input data</mat-label>
+        <input matInput placeholder="Ex. int[] arr = {2,1};" formControlName="input">
+      </mat-form-field>
+      <mat-form-field style="width: 51%" appearance="outline" class="input-field">
+        <mat-label>Output data</mat-label>
+        <input matInput placeholder="Ex. 1;2" formControlName="output">
+      </mat-form-field>
+      <button class="add-validator-button" (click)="addData()" mat-fab matTooltip="Primary" color="primary" aria-label="Example fab with a heart icon">
+        <mat-icon>add</mat-icon>
+      </button>
+    </div>
+    </form>
+    <div class="validators-list">
+      <app-exercise-test-table
+        [events]="updateTable"
+        [displayedColumns]="displayedColumns"
+        [editable]="true"
+      ></app-exercise-test-table>
+    </div>
+  </mat-card-content>
+</mat-card>

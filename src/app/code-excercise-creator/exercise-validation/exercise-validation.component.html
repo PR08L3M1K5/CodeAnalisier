@@ -1,0 +1,30 @@
+<mat-card>
+  <mat-card-title>Specify validation</mat-card-title>
+  <mat-card-content>
+    <form style="width: 50%;" [formGroup]="exerciseValidatorForm">
+    <div class="validator-creator">
+      <mat-form-field  style="width: 51%" appearance="fill">
+      <mat-select  formControlName="name">
+        <mat-option *ngFor="let validation of validationTypes" [value]="validation.value">
+          {{validation.name}}
+        </mat-option>
+      </mat-select>
+      </mat-form-field>
+      <mat-form-field style="width: 51%" appearance="outline" class="input-field" >
+        <mat-label>Exercise name</mat-label>
+        <input matInput placeholder="Ex. Algorithm" formControlName="param">
+      </mat-form-field>
+      <button class="add-validator-button" (click)="addData()" mat-fab matTooltip="Primary" color="primary" aria-label="Example fab with a heart icon">
+        <mat-icon>add</mat-icon>
+      </button>
+    </div>
+    </form>
+    <div class="validators-list">
+      <app-exercise-validation-table
+        [events]="updateTable"
+        [displayedColumns]="displayedColumns"
+        [editable]="true"
+      ></app-exercise-validation-table>
+    </div>
+  </mat-card-content>
+</mat-card>

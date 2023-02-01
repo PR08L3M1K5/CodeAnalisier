@@ -1,0 +1,43 @@
+<div class="main-panel">
+  <mat-stepper  [linear]="false" #stepper>
+    <mat-step label="Exercise description">
+     <app-exercise-description (onDataChange)="validatorEventHandlerFunction($event)"></app-exercise-description>
+      <div *ngIf="isDataValid">
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </mat-step>
+    <mat-step label="Add source code">
+         <app-exercise-source-code></app-exercise-source-code>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Specify validation</ng-template>
+        <app-exercise-validation></app-exercise-validation>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Specify tests</ng-template>
+     <app-exercise-tests></app-exercise-tests>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="update()" matStepperNext>Next</button>
+      </div>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Summary</ng-template>
+      <app-exercise-summary
+      [events]="updateTable"></app-exercise-summary>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="stepper.reset()">Reset</button>
+        <button mat-button  (click)="saveExercise()">Save</button>
+      </div>
+    </mat-step>
+  </mat-stepper>
+</div>

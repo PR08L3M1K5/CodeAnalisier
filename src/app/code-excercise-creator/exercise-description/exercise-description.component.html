@@ -1,0 +1,16 @@
+<mat-card *ngIf="exercise$|async let exercise">
+  <mat-card-title>Exercise description</mat-card-title>
+  <form [formGroup]="validatorFormGroup">
+  <mat-card-content >
+    <mat-form-field class="input-field">
+      <mat-label>Exercise name</mat-label>
+      <input matInput placeholder="Ex. Algorithm" formControlName="nameFormControl" [(ngModel)]="exercise.name">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Enter exercise description</mat-label>
+      <textarea rows="20"  matInput placeholder="Ex. It makes me feel..."  class="text-area-field" formControlName="descriptionFormControl" [(ngModel)]="exercise.description"></textarea>
+    </mat-form-field>
+  </mat-card-content>
+  </form>
+</mat-card>
+

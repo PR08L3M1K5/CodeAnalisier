@@ -1,0 +1,33 @@
+mat-card-content{
+  display: flex;
+  flex-direction: row;
+}
+.exercise-description{
+  width: 30%;
+  margin: 1%;
+
+}
+.exercise-code{
+  width: 40%;
+  margin: 1%
+}
+.exercise-result
+{
+  width: 30%;
+  margin: 1%
+}
+mat-form-field
+{
+  width: 100%;
+}
+mat-card-title{
+  margin-left: 20px;
+}
+textarea
+{
+  resize: none;
+}
+button
+{
+  margin-left: 45%;
+}

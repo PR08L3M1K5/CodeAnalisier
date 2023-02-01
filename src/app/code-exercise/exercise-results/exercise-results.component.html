@@ -1,0 +1,29 @@
+<mat-card >
+  <mat-card-title>Exercise results</mat-card-title>
+  <mat-card-content class="results-list">
+    <div *ngFor="let result of list">
+      <div *ngIf="result.title=='All test passed!'" >
+        <mat-card class="accept-result">
+        <mat-card-title>
+          {{result.title}}
+          <button mat-icon-button (click)="deleteResult(result)">
+            <mat-icon>clear icon</mat-icon>
+          </button>
+        </mat-card-title>
+        <mat-card-content>{{result.description}}</mat-card-content>
+        </mat-card>
+      </div>
+      <mat-card class="error-result">
+        <div *ngIf="result.title!='All test passed!'" >
+          <mat-card-title>
+            {{result.title}}
+            <button mat-icon-button (click)="deleteResult(result)">
+              <mat-icon>clear icon</mat-icon>
+            </button>
+          </mat-card-title>
+          <mat-card-content>{{result.description}}</mat-card-content>
+        </div>
+      </mat-card>
+    </div>
+  </mat-card-content>
+</mat-card>

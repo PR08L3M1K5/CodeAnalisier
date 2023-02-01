@@ -1,0 +1,24 @@
+mat-card-content
+{
+  margin-top: 3%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+.validator-creator
+{
+ width: 100%;
+  display: flex;
+  flex-direction:column;
+}
+.validators-list
+{
+  width: 49%;
+}
+button{
+
+}
+.add-validator-button
+{
+  margin-left: 20%;
+}

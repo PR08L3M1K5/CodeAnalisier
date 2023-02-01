@@ -1,0 +1,12 @@
+.main-panel{
+ margin-left: 5%;
+  margin-right: 5%;
+}
+button
+{
+  height: 200px;
+  width: 200px;
+}
+/*::ng-deep .mat-horizontal-stepper-header{*/
+/*  pointer-events: none !important;*/
+/*}*/

@@ -1,0 +1,38 @@
+<mat-card *ngIf="exercise$ | async let exercise">
+  <mat-card-title>Exercise summary</mat-card-title>
+  <mat-card-content>
+    <div class="first-column">
+      <mat-form-field appearance="outline" class="input-field">
+        <mat-label>Exercise name</mat-label>
+        <input matInput readonly [value]="exercise.name">
+
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Exercise description</mat-label>
+        <textarea rows="10"  matInput readonly [value]="exercise.description"  class="text-area-field"></textarea>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Source code</mat-label>
+        <textarea rows="10"  matInput readonly [value]="exercise.sourceCode" class="text-area-field"></textarea>
+      </mat-form-field>
+    </div>
+    <div class="second-column">
+      <div class="table">
+      <app-exercise-validation-table
+        [events]="updateTable"
+        [displayedColumns]="validationDisplayedColumns"
+        [editable]="false"
+      >
+      </app-exercise-validation-table>
+      </div>
+      <div class="table" style="margin-top: 1%">
+      <app-exercise-test-table
+        [events]="updateTable"
+        [displayedColumns]="testDisplayedColumns"
+        [editable]="false">
+      </app-exercise-test-table>
+        </div>
+    </div>
+  </mat-card-content>
+</mat-card>
+

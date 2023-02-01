@@ -1,0 +1,23 @@
+<mat-card style="margin: 1%">
+  <mat-card-title>{{candidateExercise.name}}</mat-card-title>
+  <mat-card-content>
+    <div class="exercise-description">
+      <mat-form-field class="example-full-width">
+        <mat-label>Exercise description</mat-label>
+        <textarea matInput  rows="30" [(ngModel)]="candidateExercise.description" readonly></textarea>
+      </mat-form-field>
+    </div >
+    <div class="exercise-code">
+      <mat-form-field  class="example-full-width">
+        <mat-label>Exercise description</mat-label>
+        <textarea matInput placeholder="Ex. int[] a = {1,2};" rows="30" [(ngModel)]="candidateExercise.candidateCode"></textarea>
+      </mat-form-field>
+      <button mat-fab color="primary" (click)="getCodeResult()" aria-label="Example icon button with a delete icon">
+        <mat-icon>play_arrow</mat-icon>
+      </button>
+    </div>
+    <div class="exercise-result">
+       <app-exercise-results [list]="resultList"></app-exercise-results>
+    </div>
+  </mat-card-content>
+</mat-card>
