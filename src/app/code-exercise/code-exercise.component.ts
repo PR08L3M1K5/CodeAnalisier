@@ -13,7 +13,7 @@ export class CodeExerciseComponent {
   candidateExercise:CandidateExercise = new CandidateExercise(0,"","","","");
   resultList: CodeResult[] = [];
   constructor(private candidateExerciseService:CandidateExerciseService) {
-    candidateExerciseService.getExerciseDetails(5).subscribe({next:(exercise:CandidateExercise)=>{
+    candidateExerciseService.getExerciseDetails(6).subscribe({next:(exercise:CandidateExercise)=>{
         this.candidateExercise = exercise;
         this.candidateExercise.candidateCode = this.candidateExercise.sourceCode;
       }})
