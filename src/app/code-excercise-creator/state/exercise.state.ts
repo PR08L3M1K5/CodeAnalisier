@@ -1,9 +1,7 @@
 import {State, Selector, Action, StateContext} from "@ngxs/store";
-import {Exercise, ValidatorRule} from "../models/exercise.model";
+import {Exercise} from "../models/exercise.model";
 import {Injectable} from "@angular/core";
 import {AddTest, AddValidator, SaveExercise} from "../actions/exercise.actions";
-import {updateItem} from "@ngxs/store/operators";
-import {cleanOutdatedPackages} from "@angular/compiler-cli/ngcc/src/writing/cleaning/package_cleaner";
 import {CandidateExerciseService} from "../../services/candidate-exercise.service";
 
 
@@ -50,6 +48,4 @@ export class ExerciseSelectors{
   {
     return state.exercise;
   }
-
-
 }

@@ -13,7 +13,7 @@ export class ExerciseSummaryComponent implements AfterViewInit{
   validationDisplayedColumns: string[] = ["type","param","action"];
 
   testDisplayedColumns: string[] = ["type","input","output","action"];
-  @Select(ExerciseSelectors.getExercise) exercise$?: Observable<Exercise>;
+  @Select(ExerciseSelectors.getExercise) exercise$?:Observable<Exercise>
   @Input() events:Observable<void>;
   @Output() updateTable: EventEmitter<void> = new EventEmitter();
   constructor() {

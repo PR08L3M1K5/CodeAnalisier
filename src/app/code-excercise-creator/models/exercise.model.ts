@@ -25,10 +25,10 @@ export class TestCase{
 export class ValidatorRule
 {
   name:string;
-  param:string;
+  value:string;
   constructor(name:string,param:string) {
     this.name = name;
-    this.param = param;
+    this.value = param;
   }
 }
 
